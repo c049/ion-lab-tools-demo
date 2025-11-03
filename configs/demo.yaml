@@ -1,0 +1,22 @@
+output_dir: out
+inputs:
+  log: data/sample/sample_log.csv
+  rb: data/sample/sample_rb.csv
+  bo: data/sample/sample_bo.csv
+analysis:
+  forecast:
+    horizon_steps: 30
+    alert_threshold: 150
+  robustness:
+    noise_levels: [0.0, 20.0, 50.0, 80.0]
+    downsample_factors: [1, 2, 4]
+report:
+  include_figures:
+    - summary.png
+    - rb_fit.png
+    - timeseries.png
+    - psd.png
+    - allan.png
+    - forecast.png
+    - bo_comparison.png
+    - robustness.png
