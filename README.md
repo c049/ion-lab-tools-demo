@@ -11,11 +11,11 @@
 - Produce a reproducible metrics bundle: PSD noise floor, Allan deviation, RB confidence intervals, AR(1) forecast MAE/MAPE, BO step reduction, robustness slopes.
 - Render plots and a PDF deck so a reviewer can grasp the system health in seconds.
 
-## Why it aligns with the advisor's research focus
-- **Quantum Control Engineering**: RB decay fitting (`ion_lab_tools/analysis/rb.py:16-74`) quantifies gate fidelity, residual RMS, and 95% confidence intervals; alerts connect directly to control-loop quality.
-- **Hardware Systems & Precision Metrology**: PSD and Allan diagnostics (`ion_lab_tools/processing/metrics.py:12-20`, `ion_lab_tools/analysis/allan.py:9-55`) surface frequency-lock stability and long-term drift.
-- **Adaptive optimisation & forecasting**: AR(1) lead-time forecasting (`ion_lab_tools/analysis/forecast.py:18-66`) and BO vs. grid/random comparisons (`ion_lab_tools/analysis/bo.py:16-74`) show how algorithmic tooling reduces experimental iterations.
-- **Operational robustness**: Noise / downsampling sensitivity (`ion_lab_tools/analysis/robustness.py:16-51`) demonstrates resilience to acquisition artefacts - key for lab deployment.
+## Core technical pillars
+- **Randomized benchmarking analytics**: RB decay fitting (`ion_lab_tools/analysis/rb.py:16-74`) quantifies gate fidelity, residual RMS, and 95% confidence intervals, surfacing control-loop health at a glance.
+- **Frequency-lock stability**: PSD and Allan diagnostics (`ion_lab_tools/processing/metrics.py:12-20`, `ion_lab_tools/analysis/allan.py:9-55`) reveal noise floors and long-term drift.
+- **Forecasting and optimisation**: AR(1) lead-time forecasting (`ion_lab_tools/analysis/forecast.py:18-66`) plus BO vs. grid/random comparisons (`ion_lab_tools/analysis/bo.py:16-74`) measure how algorithmic tooling cuts iteration count.
+- **Operational robustness**: Noise / downsampling sensitivity (`ion_lab_tools/analysis/robustness.py:16-51`) demonstrates resilience to acquisition artefacts, supporting deployment into lab pipelines.
 
 ## Key quantitative outputs
 - `RB gate fidelity p`, residual RMS, and CI half-width.
